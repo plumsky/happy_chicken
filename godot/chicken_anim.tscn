@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://image/main.png" type="Texture" id=1]
+[ext_resource path="res://image/left.png" type="Texture" id=2]
+[ext_resource path="res://image/right.png" type="Texture" id=3]
+[ext_resource path="res://image/eye.png" type="Texture" id=4]
+[ext_resource path="res://image/mouth.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "walk"
+length = 3.0
+loop = true
+step = 0.17
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/leg_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20, 110 ), Vector2( -30, 110 ), Vector2( 10, 110 ), Vector2( 40, 110 ), Vector2( 10, 110 ), Vector2( -30, 110 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/leg_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 45.4629, 106.951 ), Vector2( 31.2328, 108.005 ), Vector2( -14.356, 108.796 ), Vector2( -35.1741, 106.424 ), Vector2( -2.7612, 108.005 ), Vector2( 25.1719, 106.951 ) ]
+}
+
+[node name="chicken_anim" type="Node2D" index="0"]
+
+[node name="base" type="Node2D" parent="." index="0"]
+
+[node name="body" type="Sprite" parent="base" index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="leg_L" type="Sprite" parent="base/body" index="0"]
+
+position = Vector2( 26.5877, 110 )
+z_index = -2
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="leg_r" type="Sprite" parent="base/body" index="1"]
+
+position = Vector2( -23.6633, 107.735 )
+rotation = 0.0257186
+z_index = -2
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="eye" type="Sprite" parent="base/body" index="2"]
+
+position = Vector2( -32, -45 )
+texture = ExtResource( 4 )
+
+[node name="mouth" type="Sprite" parent="base/body" index="3"]
+
+position = Vector2( -118, -16.0003 )
+rotation = -0.116011
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="base" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/walk = SubResource( 1 )
+blend_times = [  ]
+
+
