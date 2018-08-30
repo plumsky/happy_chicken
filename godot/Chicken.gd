@@ -22,8 +22,12 @@ func move_to(pos):
 	target = pos
 	if position.x > target.x:
 		$Sprite.flip_h = false
+		$chicken_anim/base/body.set_flip_h(false)
+		$chicken_anim/base/AnimationPlayer.play()
 	elif position.x < target.x:
 		$Sprite.flip_h = true
+		$chicken_anim/base/body.set_flip_h(true)
+		$chicken_anim/base/AnimationPlayer.stop()
 	
 func _physics_process(delta):
 	velocity = (target - position).normalized() * speed

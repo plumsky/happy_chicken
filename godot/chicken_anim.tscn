@@ -41,14 +41,16 @@ tracks/1/keys = {
 
 [node name="base" type="Node2D" parent="." index="0"]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="body" type="Sprite" parent="base" index="0"]
 
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="leg_L" type="Sprite" parent="base/body" index="0"]
 
-position = Vector2( 26.5877, 110 )
+position = Vector2( 22.2918, 110 )
 z_index = -2
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -58,7 +60,7 @@ __meta__ = {
 
 [node name="leg_r" type="Sprite" parent="base/body" index="1"]
 
-position = Vector2( -23.6633, 107.735 )
+position = Vector2( 12.5539, 108.329 )
 rotation = 0.0257186
 z_index = -2
 texture = ExtResource( 3 )
