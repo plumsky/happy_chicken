@@ -16,9 +16,12 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=1920
+window/size/height=1024
 window/size/resizable=false
 window/dpi/allow_hidpi=true
 
 [rendering]
 
+quality/subsurface_scattering/quality=2
 environment/default_environment="res://default_env.tres"

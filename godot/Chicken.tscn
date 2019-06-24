@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Chicken.gd" type="Script" id=1]
 [ext_resource path="res://image/chicken.svg" type="Texture" id=2]
+[ext_resource path="res://chicken_anim.tscn" type="PackedScene" id=3]
 
-[node name="chicken" type="KinematicBody2D" index="0"]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[node name="chicken" type="KinematicBody2D"]
 
 input_pickable = true
 collision_layer = 1
@@ -17,9 +28,18 @@ speed = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+visible = false
 scale = Vector2( 0.1, 0.1 )
 z_index = 1
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="chicken_anim" type="AnimatedSprite" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -0.309509, 4.54565 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Transform" ]
 
 
